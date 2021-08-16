@@ -24,12 +24,14 @@ export class CctvController {
     saveData( @Body() _cctvDataDTO: CctvDataDTO ): void {
         this.cctv_Service.saveData(_cctvDataDTO)
             .then((result) => {
-                let target_token = 'cM2aCZfTRv2R9C-lYsnv-u:APA91bF-ymVLLWelitE7HT6v7zZVpShU2_0kImoyg1wZvU09ltCiNID-hEMMpY5khZNpiOF_WPwFUrfpoOjbnw-z1sA-H8I5Lt2yckNRWmKKZRH4lcovUhrTtcH_8f8n8wLKDW-yYODR' // put in there device token
+                let target_token = 'eOt1LFDKQimQGI94s31hP-:APA91bH8la-K6VSykekND8ypMhmqHiOicGnK91iSTyz4GrZSKrk5gY3z1ZjtDQIfa1iiKSUhXg0WUkeZ9W-UGfXe7lvdnwv-6VBD7f0Pxi7T8-UPOjyMSyaU5oSp-WskvNflaBsnH_Dd';
+                // 'cM2aCZfTRv2R9C-lYsnv-u:APA91bF-ymVLLWelitE7HT6v7zZVpShU2_0kImoyg1wZvU09ltCiNID-hEMMpY5khZNpiOF_WPwFUrfpoOjbnw-z1sA-H8I5Lt2yckNRWmKKZRH4lcovUhrTtcH_8f8n8wLKDW-yYODR';
+                // put in there device token
 
                 let message = {
                     notification: {
                         title: 'warning...',
-                        body: 'warning...' + result,
+                        body: 'warning...' + result.cctv_number,
                     },
                     token: target_token,
                 }
